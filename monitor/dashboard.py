@@ -58,10 +58,23 @@ if not df.empty:
         
     with col_right:
         st.subheader("🔥 Profit/Loss Heatmap")
-        # 종목별 수익 분포 히트맵
         fig_heat = px.treemap(df, path=['code'], values='profit', color='profit',
                              color_continuous_scale='RdYlGn', title='종목별 수익 기여도')
         st.plotly_chart(fig_heat, use_container_width=True)
+
+    # 4. AI 투자 복기 섹션
+    st.divider()
+    st.subheader("🤖 Gemini AI Investment Insights")
+    if st.button("AI 매매 복기 생성"):
+        from analytics.ai_journal import AITradingJournal
+        # config에서 API 키 로드 로직 필요 (여기선 예시)
+        api_key = st.secrets.get("GEMINI_API_KEY", "") 
+        journal = AITradingJournal(api_key)
+        
+        with st.spinner("AI가 오늘의 매매를 분석 중입니다..."):
+            # 실제 구현 시 macro_status 데이터 전달 필요
+            review = journal.generate_review(df, "Nasdaq: +1.2%, USD/KRW: -0.5%")
+            st.info(review)
 else:
     st.warning("아직 거래 내역이 없습니다. 시스템이 거래를 시작하면 대시보드가 활성화됩니다.")
 
