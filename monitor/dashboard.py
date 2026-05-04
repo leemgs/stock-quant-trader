@@ -1,0 +1,69 @@
+import streamlit as st
+import pandas as pd
+import sqlite3
+import plotly.express as px
+import plotly.graph_objects as go
+from datetime import datetime
+
+# 페이지 설정
+st.set_page_config(page_title="Antigravity Quant Dashboard", layout="wide")
+
+def get_data():
+    try:
+        conn = sqlite3.connect("data/trading_history.db")
+        df = pd.read_sql("SELECT * FROM trades ORDER BY timestamp DESC", conn)
+        conn.close()
+        return df
+    except:
+        return pd.DataFrame()
+
+# 사이드바 설정
+st.sidebar.title("💎 Trading Bot Control")
+st.sidebar.info("시스템 상태: 🟢 가동 중")
+refresh_rate = st.sidebar.slider("새로고침 간격(초)", 5, 60, 10)
+
+# 메인 타이틀
+st.title("🚀 Antigravity Real-time Quant Dashboard")
+
+# 데이터 로드
+df = get_data()
+
+if not df.empty:
+    # 1. 상단 메트릭 (총 수익, 승률 등)
+    col1, col2, col3, col4 = st.columns(4)
+    total_trades = len(df)
+    win_rate = (df['profit'] > 0).mean() * 100
+    total_profit = df['profit'].sum()
+    
+    col1.metric("총 거래 횟수", f"{total_trades}회")
+    col2.metric("승률", f"{win_rate:.1f}%")
+    col3.metric("누적 손익", f"{total_profit:,.0f}원", delta=f"{total_profit:,.0f}")
+    col4.metric("최근 업데이트", datetime.now().strftime("%H:%M:%S"))
+
+    # 2. 실시간 수익률 곡선
+    st.subheader("📈 Cumulative Equity Curve")
+    df['timestamp'] = pd.to_datetime(df['timestamp'])
+    df = df.sort_values('timestamp')
+    df['cum_profit'] = df['profit'].cumsum()
+    
+    fig_curve = px.line(df, x='timestamp', y='cum_profit', title='누적 수익률 추이')
+    st.plotly_chart(fig_curve, use_container_width=True)
+
+    # 3. 현재 보유 종목 및 매매 히스토리
+    col_left, col_right = st.columns(2)
+    
+    with col_left:
+        st.subheader("📋 Recent Trade History")
+        st.dataframe(df.sort_values('timestamp', ascending=False).head(10), use_container_width=True)
+        
+    with col_right:
+        st.subheader("🔥 Profit/Loss Heatmap")
+        # 종목별 수익 분포 히트맵
+        fig_heat = px.treemap(df, path=['code'], values='profit', color='profit',
+                             color_continuous_scale='RdYlGn', title='종목별 수익 기여도')
+        st.plotly_chart(fig_heat, use_container_width=True)
+else:
+    st.warning("아직 거래 내역이 없습니다. 시스템이 거래를 시작하면 대시보드가 활성화됩니다.")
+
+# 자동 새로고침 설정 (Streamlit 1.27.0+ 기준)
+# st.rerun() # 실제 사용 시에는 QTimer나 st_autorefresh 등을 활용 권장
