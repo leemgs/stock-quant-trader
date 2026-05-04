@@ -1,6 +1,7 @@
 class MarketRiskManager:
-    def __init__(self, macro_collector):
+    def __init__(self, macro_collector, max_budget=None):
         self.collector = macro_collector
+        self.max_budget = max_budget
         self.risk_score = 0 # 0(안전) ~ 100(위험)
 
     def calculate_risk_index(self):
@@ -21,10 +22,15 @@ class MarketRiskManager:
         self.risk_score = max(0, min(100, score))
         return self.risk_score
 
-    def get_trading_multiplier(self):
-        """리스크 점수에 따른 매매 비중(조절 계수) 반환"""
+    def get_trading_multiplier(self, current_investment=0):
+        """리스크 점수 및 투자 한도에 따른 매매 비중 반환"""
         self.calculate_risk_index()
         
+        # 1. 투자 한도(max_budget) 체크
+        if self.max_budget and current_investment >= self.max_budget:
+            print("🛑 [RiskManager] 설정된 투자 한도 초과. 매매를 중단합니다.")
+            return 0.0
+
         if self.risk_score >= 80: # 극도로 위험
             return 0.0 # 매매 중단
         elif self.risk_score >= 60: # 주의
