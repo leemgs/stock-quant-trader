@@ -147,6 +147,7 @@ streamlit run monitor/dashboard.py
 
 ---
 
+
 ## 6. 리포트 샘플 (Analytics)
 
 시스템 실행 후 `reports/` 폴더에 다음과 같은 분석 자료가 자동 생성됩니다.
@@ -176,3 +177,23 @@ streamlit run monitor/dashboard.py
 - **장초반 30분 집중**: 한국 시장의 변동성 80%는 오전 9시~9시 30분에 발생합니다. 이 시간에 시스템이 집중적으로 매매하도록 설정하세요.
 - **미수/신용 활용 (주의)**: 소액(1만원)으로 단기간 고수익을 내려면 키움증권의 증거금률을 활용하여 레버리지를 극대화해야 합니다. (단, 원금 초과 손실 위험이 있으니 반드시 모의투자 후 실행하세요.)
 - **서버 안정성**: 0.1초의 지연도 수익률에 영향을 줍니다. 가정용 PC보다는 **AWS 또는 가비아 등의 Windows VPS** 환경에서 24시간 가동하는 것을 권장합니다.
+
+---
+
+## 9. 참고문헌 (References)
+
+본 프로젝트의 아키텍처 및 전략 설계에 참고한 주요 자료입니다.
+
+### 공식 리소스
+- [키움증권 OpenAPI+ 공식 가이드라인](https://www.kiwoom.com/h/customer/download/VOpenApiInfoView)
+- [키움증권 상시 모의투자 서비스 안내](https://www.kiwoom.com/h/mock/mock/VMockMainView)
+
+### 관련 연구 논문
+- Williams, L. (1999). *Long-Term Secrets to Short-Term Trading*. Wiley. (변동성 돌파 전략의 기초)
+- Sharpe, W. F. (1994). *The Sharpe Ratio*. Journal of Portfolio Management. (성능 검증 지표)
+- Fischer, T., & Krauss, C. (2018). *Deep learning with long short-term memory networks for financial market predictions*. European Journal of Operational Research. (AI 전략 설계 참고)
+
+### 실무적 참고 사이트
+- [QuantConnect](https://www.quantconnect.com/): 글로벌 퀀트 알고리즘 프레임워크 참고
+- [Systrader79의 퀀트 투자 블로그](https://blog.naver.com/systrader79): 한국 시장 자산 배분 전략 참고
+- [파이썬으로 배우는 알고리즘 트레이딩](https://wikidocs.net/book/110): 키움 API 파이썬 연동 기초
