@@ -1,0 +1,22 @@
+# Kiwoom Quant Trader Configuration
+
+auth:
+  user_id: "your_id"
+  account_no: "your_account"
+  telegram_token: "" # 텔레그램 봇 토큰
+  chat_id: ""       # 텔레그램 챗 ID
+
+trading:
+  universe:
+    - "005930" # 삼성전자
+    - "000660" # SK하이닉스
+    - "035420" # NAVER
+    - "035720" # 카카오
+  k_value: 0.5
+  stop_loss: 0.02 # 2% 손절
+  take_profit: 0.05 # 5% 익절
+  max_stocks: 5
+
+logging:
+  level: "INFO"
+  file: "logs/trading.log"
