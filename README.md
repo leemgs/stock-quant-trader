@@ -36,8 +36,9 @@ graph TD
 
 ### 핵심 모듈 기능
 - **Core Engine**: `QAxWidget`을 이용한 Kiwoom COM 객체 제어 및 재접속 관리.
-- **Strategy Manager**: 팩트 기반의 수익 모델(변동성 돌파, 추세 추종) 탑재.
+- **Strategy Manager**: 팩트 기반의 수익 모델(변동성 돌파, 추세 추종, **AI 뉴스 감성 분석**) 탑재.
 - **Risk Manager**: 고정 비중법(Fixed Fractional) 및 ATR 기반 손절 적용.
+- **AI News Analyzer**: **Google Gemini API**를 연동하여 실시간 뉴스의 호재/악재를 점수화.
 - **Analytics Engine**: 샤프 지수(Sharpe Ratio), MDD(최대 낙폭) 계산 및 리포팅.
 
 ---
