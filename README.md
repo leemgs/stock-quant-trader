@@ -121,7 +121,8 @@ streamlit run monitor/dashboard.py
 시스템 실행 후 `reports/` 폴더에 다음과 같은 분석 자료가 자동 생성됩니다.
 - **Performance Graph**: 누적 수익률 vs 벤치마크 (KOSPI/KOSDAQ)
 - **Drawdown Chart**: 하락폭 분석을 통한 리스크 관리 지표
-- **Thesis Report**: 전략의 통계적 유의성 및 백테스트 결과 리포트 (PDF)
+- **Advanced Statistical Report**: **p-value, T-test, Sharpe/Sortino Ratio**를 포함한 학술적 수준의 PDF 리포트
+- **Slippage Impact Report**: 이론적 수익과 실거래 수익의 오차 원인 분석
 
 ---
 
