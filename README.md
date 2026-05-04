@@ -38,9 +38,10 @@ graph TD
 - **Core Engine**: `QAxWidget`을 이용한 Kiwoom COM 객체 제어 및 재접속 관리.
 - **Strategy Manager**: **앙상블(Ensemble) 엔진** 탑재. 돌파, 평균회귀, 추세추종 전략의 가중 투표 방식 채택.
 - **Risk Manager**: 고정 비중법(Fixed Fractional) 및 ATR 기반 손절 적용.
+- **Paper Trading Engine**: 실시간 호가 잔량 및 슬리피지를 반영한 정밀 가상 매매 시뮬레이터.
 - **Ensemble Engine**: 전략별 실시간 성과를 추적하여 자산을 동적으로 배분.
 - **AI News Analyzer**: **Google Gemini API**를 연동하여 실시간 뉴스의 호재/악재를 점수화.
-- **Analytics Engine**: 샤프 지수(Sharpe Ratio), MDD(최대 낙폭) 계산 및 리포팅.
+- **Analytics Engine**: 샤프 지수, MDD 및 **슬리피지 비용(Slippage Cost)** 분석 및 리포팅.
 
 ---
 
