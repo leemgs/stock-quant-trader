@@ -1,4 +1,4 @@
-# Kiwoom Quant Trader Pro 🚀
+# K-Quant Pro (Kiwoom Quant Trader Pro 🚀)
 
 > **키움증권 API 기반 실전 자동매매 및 성과 분석 프레임워크**
 >
@@ -6,7 +6,7 @@
 
 ## 🌌 프로젝트 명칭 및 철학 (Naming & Philosophy)
 
-**Kiwoom Quant Trader Pro 🚀**는 단순한 매매 자동화를 넘어, 데이터와 기술로 투자의 품격을 높이겠다는 의지를 담고 있습니다.
+**Kiwoom Quant Trader Pro 🚀** (K-Quant Pro) 는 단순한 매매 자동화를 넘어, 데이터와 기술로 투자의 품격을 높이겠다는 의지를 담고 있습니다.
 
 - **Kiwoom**: 대한민국 개인 투자자들이 가장 신뢰하는 **키움증권 OpenAPI+**를 기반으로 실전 매매의 견고한 인프라를 상징합니다.
 - **Quant**: 인간의 주관적 감정을 배제하고, 수학적 모델과 데이터에 기반한 **계량 투자(Quantitative Analysis)**의 정교함을 추구합니다.
