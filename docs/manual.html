@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용자 매뉴얼 - K-Quant Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">K-Quant <span>Pro</span></a></div>
+            <ul class="nav-links">
+                <li><a href="features.html">주요기능</a></li>
+                <li><a href="installation.html">설치방법</a></li>
+                <li><a href="manual.html" class="active">사용자매뉴얼</a></li>
+                <li><a href="strategy.html">수익전략</a></li>
+                <li><a href="contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section">
+        <h1 class="page-title">사용자 매뉴얼</h1>
+        <p class="page-subtitle">시스템 가동부터 결과 분석까지, 모든 과정을 세밀하게 가이드합니다.</p>
+
+        <div class="manual-grid">
+            <div class="manual-sidebar">
+                <ul>
+                    <li><a href="#config">config.yaml 설정</a></li>
+                    <li><a href="#running">프로그램 가동</a></li>
+                    <li><a href="#dashboard">대시보드 활용</a></li>
+                    <li><a href="#faq">자주 묻는 질문</a></li>
+                </ul>
+            </div>
+            
+            <div class="manual-main">
+                <section id="config">
+                    <h2>1. config.yaml 완벽 마스터</h2>
+                    <p>시스템의 두뇌인 설정 파일을 본인의 스타일에 맞게 튜닝하세요.</p>
+                    <table class="manual-table">
+                        <tr><th>항목</th><th>설명</th><th>권장값</th></tr>
+                        <tr><td>max_budget</td><td>자동매매에 사용할 총 예산</td><td>계좌 잔고의 50%</td></tr>
+                        <tr><td>stop_loss</td><td>손절매 기준 (비율)</td><td>0.015 (-1.5%)</td></tr>
+                        <tr><td>k_value</td><td>돌파 민감도 (낮을수록 공격적)</td><td>0.4 ~ 0.6</td></tr>
+                        <tr><td>gemini_api_key</td><td>AI 뉴스 분석용 API 키</td><td>필수</td></tr>
+                    </table>
+                </section>
+
+                <section id="running">
+                    <h2>2. 프로그램 가동 프로세스</h2>
+                    <ol>
+                        <li><strong>KOA Studio 실행</strong>: 키움증권 서버 상태를 먼저 확인하세요.</li>
+                        <li><strong>main.py 실행</strong>: <code>python main.py</code>를 관리자 권한으로 실행합니다.</li>
+                        <li><strong>로그인 확인</strong>: 화면 우측 하단 트레이 아이콘에 'OpenAPI'가 정상 활성화되었는지 확인하세요.</li>
+                        <li><strong>텔레그램 확인</strong>: "자동매매가 시작되었습니다" 메시지가 오면 정상입니다.</li>
+                    </ol>
+                </section>
+
+                <section id="dashboard">
+                    <h2>3. 실시간 대시보드 활용</h2>
+                    <p><code>streamlit run monitor/dashboard.py</code> 명령어로 웹 대시보드를 켭니다.</p>
+                    <ul>
+                        <li><strong>Equity Curve</strong>: 자산의 우상향 여부를 체크하세요.</li>
+                        <li><strong>Heatmap</strong>: 오늘 어떤 종목이 효자 종목인지 시각적으로 확인하세요.</li>
+                        <li><strong>AI Review</strong>: 장 종료 후 AI가 분석한 오늘의 매매 복기를 정독하세요.</li>
+                    </ul>
+                </section>
+
+                <section id="faq">
+                    <h2>4. 자주 묻는 질문 (FAQ)</h2>
+                    <details>
+                        <summary>Q: 주문이 나가지 않아요.</summary>
+                        <p>A: 1. 예수금이 부족하지 않은지 확인하세요. 2. 모의투자 계좌인 경우 키움증권 홈페이지에서 '모의투자 신청'이 되어 있는지 확인하세요.</p>
+                    </details>
+                    <details>
+                        <summary>Q: 64비트 파이썬을 사용하면 안 되나요?</summary>
+                        <p>A: 불가능합니다. 키움증권 API 라이브러리가 32비트 전용으로 설계되었기 때문입니다.</p>
+                    </details>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2026 K-Quant Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

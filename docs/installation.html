@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설치 가이드 - K-Quant Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">K-Quant <span>Pro</span></a></div>
+            <ul class="nav-links">
+                <li><a href="features.html">주요기능</a></li>
+                <li><a href="installation.html" class="active">설치방법</a></li>
+                <li><a href="manual.html">사용자매뉴얼</a></li>
+                <li><a href="strategy.html">수익전략</a></li>
+                <li><a href="contact.html">문의하기</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section">
+        <h1 class="page-title">상세 설치 가이드</h1>
+        <p class="page-subtitle">K-Quant Pro를 당신의 컴퓨터에 이식하는 가장 확실한 방법입니다.</p>
+
+        <div class="guide-content">
+            <div class="guide-section">
+                <h2>Step 1: 시스템 요구사항 확인</h2>
+                <ul>
+                    <li><strong>운영체제</strong>: Windows 10 또는 11 필수 (32-bit API 호환성 때문)</li>
+                    <li><strong>하드웨어</strong>: RAM 8GB 이상 권장 (안정적인 데이터 처리를 위함)</li>
+                    <li><strong>보안</strong>: 관리자 권한 실행 권장</li>
+                </ul>
+            </div>
+
+            <div class="guide-section">
+                <h2>Step 2: Python 32-bit 설치</h2>
+                <p>키움증권 API는 32비트 전용입니다. 반드시 32비트 버전을 설치해야 합니다.</p>
+                <ol>
+                    <li><a href="https://www.python.org/downloads/windows/">Python 공식 사이트</a> 방문</li>
+                    <li><code>Windows installer (32-bit)</code> 다운로드 및 실행</li>
+                    <li>설치 시 <strong>Add Python to PATH</strong> 옵션 반드시 체크</li>
+                </ol>
+            </div>
+
+            <div class="guide-section">
+                <h2>Step 3: 키움 OpenAPI+ 설치 및 서비스 신청</h2>
+                <ol>
+                    <li>키움증권 홈페이지 로그인</li>
+                    <li>[전체메뉴] > [트레이딩] > [오픈API] > [서비스 신청]</li>
+                    <li>모듈 다운로드 및 설치</li>
+                    <li><strong>KOA Studio</strong> 설치 (데이터 구조 확인용으로 매우 유용)</li>
+                </ol>
+            </div>
+
+            <div class="guide-section">
+                <h2>Step 4: 프로젝트 환경 구축</h2>
+                <pre><code>git clone https://github.com/leemgs/kiwoom-quant-trader.git
+cd kiwoom-quant-trader
+pip install -r requirements.txt</code></pre>
+            </div>
+        </div>
+    </main>
+
+    <footer id="main-footer">
+        <div class="container">
+            <p>&copy; 2026 K-Quant Pro. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
