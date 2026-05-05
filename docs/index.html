@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwoom Quant Trader Pro - 공식 가이드</title>
+    <meta name="description" content="키움증권 API 기반 실전 자동매매 및 AI 성과 분석 프레임워크 공식 홈페이지">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="main-header">
+        <nav class="container">
+            <div class="logo">K-Quant <span>Pro</span></div>
+            <ul class="nav-links">
+                <li><a href="#features">주요기능</a></li>
+                <li><a href="#install">설치방법</a></li>
+                <li><a href="#strategy">수익전략</a></li>
+                <li><a href="https://github.com/leemgs/kiwoom-quant-trader" class="btn-github">GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" style="background-image: linear-gradient(rgba(10, 10, 15, 0.8), rgba(10, 10, 15, 0.8)), url('images/hero_bg.png');">
+        <div class="container hero-content">
+            <h1 class="fade-in">데이터로 증명하는<br><span class="gradient-text">완성형 자동매매</span></h1>
+            <p class="fade-in delay-1">키움증권 API와 AI의 결합, 이제 감이 아닌 통계로 투자하세요.</p>
+            <div class="hero-btns fade-in delay-2">
+                <a href="#install" class="btn-primary">시작하기</a>
+                <a href="#features" class="btn-secondary">더 알아보기</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="container section">
+        <h2 class="section-title">왜 K-Quant Pro인가?</h2>
+        <div class="features-grid">
+            <div class="feature-card" id="feat-1">
+                <div class="icon">🤖</div>
+                <h3>AI 감성 분석</h3>
+                <p>Gemini AI가 실시간 뉴스를 분석하여 호재 종목을 남들보다 빠르게 선점합니다.</p>
+            </div>
+            <div class="feature-card" id="feat-2">
+                <div class="icon">⚖️</div>
+                <h3>전략 앙상블</h3>
+                <p>돌파, 평균회귀, 추세추종 전략이 서로를 보완하며 어떤 장세에서도 수익을 추구합니다.</p>
+            </div>
+            <div class="feature-card" id="feat-3">
+                <div class="icon">🛡️</div>
+                <h3>세이프 가드</h3>
+                <p>나스닥과 환율을 실시간 감시하여 폭락장에서 스스로 자산을 보호합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="install" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title">3분 설치 가이드</h2>
+            <div class="install-steps">
+                <div class="step">
+                    <span class="step-num">01</span>
+                    <h4>환경 준비</h4>
+                    <p>Windows 10/11 환경에서 Python 32-bit 버전을 설치하세요.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">02</span>
+                    <h4>모듈 설치</h4>
+                    <p><code>pip install -r requirements.txt</code> 명령어로 필수 라이브러리를 설치합니다.</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">03</span>
+                    <h4>시스템 실행</h4>
+                    <p>키움증권 로그인 후 <code>python main.py</code>를 실행하면 자동매매가 시작됩니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="strategy" class="container section">
+        <div class="strategy-box">
+            <h2 class="section-title">수익 극대화 노하우</h2>
+            <div class="strategy-content">
+                <div class="strategy-text">
+                    <p>1만원으로 10만원을 만드는 1,000% 성과는 <strong>'기계적인 원칙'</strong>에서 시작됩니다.</p>
+                    <ul>
+                        <li>오전 9시 ~ 9시 30분의 폭발적인 변동성 집중 공략</li>
+                        <li>자가 진화 알고리즘을 통한 최적의 K-값 자동 산출</li>
+                        <li>-1.5% 손절 원칙을 통한 자산 보호</li>
+                    </ul>
+                </div>
+                <div class="strategy-visual">
+                    <!-- 향후 실제 수익 그래프 이미지 삽입 가능 -->
+                    <div class="mock-chart">🔥 수익률 1,000%를 향한 엔진</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="main-footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Kiwoom Quant Trader Pro. All rights reserved.</p>
+            <p class="disclaimer">본 시스템은 투자의 참고 자료일 뿐이며, 모든 투자의 책임은 사용자 본인에게 있습니다.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
