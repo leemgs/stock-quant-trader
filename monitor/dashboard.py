@@ -28,6 +28,10 @@ st.title("🚀 Antigravity Real-time Quant Dashboard")
 # 데이터 로드
 df = get_data()
 
+# 목표 설정 (1만원 -> 10만원 도전)
+INITIAL_SEED = 10000
+TARGET_GOAL = 100000
+
 if not df.empty:
     # 1. 상단 메트릭 (총 수익, 승률 등)
     col1, col2, col3, col4 = st.columns(4)
@@ -38,7 +42,15 @@ if not df.empty:
     col1.metric("총 거래 횟수", f"{total_trades}회")
     col2.metric("승률", f"{win_rate:.1f}%")
     col3.metric("누적 손익", f"{total_profit:,.0f}원", delta=f"{total_profit:,.0f}")
-    col4.metric("최근 업데이트", datetime.now().strftime("%H:%M:%S"))
+    col4.metric("목표 달성률", f"{(total_profit/TARGET_GOAL)*100:.1f}%")
+
+    # 1.5 챌린지 현황판
+    st.divider()
+    st.subheader("🎯 1,000% 수익 도전 (1만원 → 10만원)")
+    current_total = INITIAL_SEED + total_profit
+    progress = min(1.0, current_total / TARGET_GOAL)
+    st.progress(progress)
+    st.write(f"현재 총 자산: **{current_total:,.0f}원** / 목표 자산: **{TARGET_GOAL:,.0f}원**")
 
     # 2. 실시간 수익률 곡선
     st.subheader("📈 Cumulative Equity Curve")
