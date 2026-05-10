@@ -1,8 +1,8 @@
 from abc import ABC, abstractmethod
 
 class BaseStrategy(ABC):
-    def __init__(self, kiwoom):
-        self.kiwoom = kiwoom
+    def __init__(self, broker):
+        self.broker = broker
         self.universe = [] # 매매 대상 종목
 
     @abstractmethod
@@ -11,6 +11,6 @@ class BaseStrategy(ABC):
         pass
 
     @abstractmethod
-    def check_signal(self, code):
+    def check_signal(self, code, df):
         """매수/매도 시그널 확인"""
         pass

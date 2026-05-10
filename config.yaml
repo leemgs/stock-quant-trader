@@ -1,11 +1,14 @@
-# Kiwoom Quant Trader Configuration
+# KIS Quant Trader Configuration
 
 auth:
-  user_id: "your_id"
-  account_no: "your_account"
-  telegram_token: "" # 텔레그램 봇 토큰
-  chat_id: ""       # 텔레그램 챗 ID
-  gemini_api_key: "" # Google Gemini API Key
+  kis_app_key: "your_app_key"
+  kis_app_secret: "your_app_secret"
+  kis_account_no: "your_account_no" # 계좌번호 8자리
+  kis_account_suffix: "01"         # 계좌부호 2자리 (보통 01)
+  kis_virtual_trading: true        # 모의투자 여부 (true/false)
+  telegram_token: ""               # 텔레그램 봇 토큰
+  chat_id: ""                      # 텔레그램 챗 ID
+  gemini_api_key: ""               # Google Gemini API Key
 
 trading:
   universe:
@@ -15,8 +18,8 @@ trading:
     - "035720" # 카카오
   max_budget: 500000 # 자동매매에 사용할 최대 금액 (예: 50만원)
   k_value: 0.5
-  stop_loss: 0.02 # 2% 손절
-  take_profit: 0.05 # 5% 익절
+  stop_loss: 0.02    # 2% 손절
+  take_profit: 0.05  # 5% 익절
   max_stocks: 5
 
 logging:

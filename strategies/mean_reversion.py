@@ -2,8 +2,8 @@ import pandas as pd
 from .base_strategy import BaseStrategy
 
 class MeanReversion(BaseStrategy):
-    def __init__(self, kiwoom, universe, rsi_period=14, buy_threshold=30):
-        super().__init__(kiwoom)
+    def __init__(self, broker, universe, rsi_period=14, buy_threshold=30):
+        super().__init__(broker)
         self.universe = universe
         self.rsi_period = rsi_period
         self.buy_threshold = buy_threshold

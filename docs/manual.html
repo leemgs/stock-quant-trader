@@ -13,10 +13,12 @@
             <div class="logo"><a href="index.html" style="text-decoration:none; color:inherit;">K-Quant <span>Pro</span></a></div>
             <ul class="nav-links">
                 <li><a href="features.html">주요기능</a></li>
+                <li><a href="high_profit.html">핵심가이드</a></li>
                 <li><a href="installation.html">설치방법</a></li>
                 <li><a href="manual.html" class="active">사용자매뉴얼</a></li>
                 <li><a href="strategy.html">수익전략</a></li>
                 <li><a href="contact.html">문의하기</a></li>
+                <li><a href="https://github.com/leemgs/stock-quant-trader" class="btn-github">GitHub</a></li>
             </ul>
         </nav>
     </header>
@@ -51,9 +53,9 @@
                 <section id="running">
                     <h2>2. 프로그램 가동 프로세스</h2>
                     <ol>
-                        <li><strong>KOA Studio 실행</strong>: 키움증권 서버 상태를 먼저 확인하세요.</li>
-                        <li><strong>main.py 실행</strong>: <code>python main.py</code>를 관리자 권한으로 실행합니다.</li>
-                        <li><strong>로그인 확인</strong>: 화면 우측 하단 트레이 아이콘에 'OpenAPI'가 정상 활성화되었는지 확인하세요.</li>
+                        <li><strong>API 상태 점검</strong>: KIS API 연결 상태를 먼저 확인하세요.</li>
+                        <li><strong>main.py 실행</strong>: <code>python main.py</code>를 실행합니다.</li>
+                        <li><strong>토큰 발급 확인</strong>: 터미널 로그를 통해 Access Token이 정상적으로 발급되었는지 확인하세요.</li>
                         <li><strong>텔레그램 확인</strong>: "자동매매가 시작되었습니다" 메시지가 오면 정상입니다.</li>
                     </ol>
                 </section>
@@ -72,11 +74,11 @@
                     <h2>4. 자주 묻는 질문 (FAQ)</h2>
                     <details>
                         <summary>Q: 주문이 나가지 않아요.</summary>
-                        <p>A: 1. 예수금이 부족하지 않은지 확인하세요. 2. 모의투자 계좌인 경우 키움증권 홈페이지에서 '모의투자 신청'이 되어 있는지 확인하세요.</p>
+                        <p>A: 1. 예수금이 부족하지 않은지 확인하세요. 2. 모의투자 계좌인 경우 한국투자증권 홈페이지에서 '모의투자 신청'이 되어 있는지 확인하세요.</p>
                     </details>
                     <details>
-                        <summary>Q: 64비트 파이썬을 사용하면 안 되나요?</summary>
-                        <p>A: 불가능합니다. 키움증권 API 라이브러리가 32비트 전용으로 설계되었기 때문입니다.</p>
+                        <summary>Q: Ubuntu 서버에서 백그라운드로 실행할 수 있나요?</summary>
+                        <p>A: 네, 가능합니다. nohup, tmux, docker 등을 활용하여 24시간 가동할 수 있습니다.</p>
                     </details>
                 </div>
             </div>
@@ -85,7 +87,7 @@
 
     <footer id="main-footer">
         <div class="container">
-            <p>&copy; 2026 K-Quant Pro. All rights reserved.</p>
+            <p>&copy; 2026 K-Quant Pro. 모든 권리 보유.</p>
         </div>
     </footer>
 </body>

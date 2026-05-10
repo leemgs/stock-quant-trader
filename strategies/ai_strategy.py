@@ -4,8 +4,8 @@ from sklearn.ensemble import RandomForestClassifier
 from .base_strategy import BaseStrategy
 
 class AIAlphaStrategy(BaseStrategy):
-    def __init__(self, kiwoom, universe):
-        super().__init__(kiwoom)
+    def __init__(self, broker, universe):
+        super().__init__(broker)
         self.model = RandomForestClassifier(n_estimators=100)
         self.universe = universe
 

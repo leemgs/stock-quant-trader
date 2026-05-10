@@ -2,8 +2,8 @@ import numpy as np
 from .base_strategy import BaseStrategy
 
 class AdvancedBreakout(BaseStrategy):
-    def __init__(self, kiwoom, universe, target_return=0.1):
-        super().__init__(kiwoom)
+    def __init__(self, broker, universe, target_return=0.1):
+        super().__init__(broker)
         self.universe = universe
         self.target_return = target_return # 매일 목표 수익률
         self.k_values = {}

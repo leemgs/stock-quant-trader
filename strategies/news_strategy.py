@@ -3,8 +3,8 @@ from .base_strategy import BaseStrategy
 from core.news_analyzer import NewsSentimentAnalyzer
 
 class NewsSentimentStrategy(BaseStrategy):
-    def __init__(self, kiwoom, universe, gemini_api_key, threshold=70):
-        super().__init__(kiwoom)
+    def __init__(self, broker, universe, gemini_api_key, threshold=70):
+        super().__init__(broker)
         self.universe = universe
         self.analyzer = NewsSentimentAnalyzer(gemini_api_key)
         self.threshold = threshold
@@ -29,6 +29,6 @@ class NewsSentimentStrategy(BaseStrategy):
             for code in self.universe:
                 if self.check_signal(code):
                     # 실거래 주문 로직 연동
-                    # self.kiwoom.send_order(...)
+                    # self.broker.send_order(...)
                     pass
                 time.sleep(2) # API 과부하 방지

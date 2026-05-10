@@ -1,8 +1,8 @@
 from .base_strategy import BaseStrategy
 
 class TrendFollowing(BaseStrategy):
-    def __init__(self, kiwoom, universe, short_ma=5, long_ma=20):
-        super().__init__(kiwoom)
+    def __init__(self, broker, universe, short_ma=5, long_ma=20):
+        super().__init__(broker)
         self.universe = universe
         self.short_ma = short_ma
         self.long_ma = long_ma
