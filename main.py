@@ -14,6 +14,7 @@ from core.macro_collector import MacroCollector
 from strategies.volatility_breakout import VolatilityBreakout
 from strategies.mean_reversion import MeanReversion
 from strategies.trend_following import TrendFollowing
+from strategies.extreme_growth_strategy import ExtremeGrowthStrategy
 
 # 로깅 설정
 logging.basicConfig(
@@ -41,8 +42,16 @@ def main():
     broker = KISBroker(config)
     print("✅ KIS API 연결 및 계좌 정보 확인 완료")
     
-    # 3. 전략 앙상블 구성
+    # 3. 전략 구성 및 분기
     universe = config['trading']['universe']
+    
+    # ⚡ 1,000% 달성을 위한 Extreme Growth 모드 확인
+    if config.get('trading', {}).get('extreme_growth', {}).get('enable', False):
+        print("⚡ [Extreme Growth] 1만원 -> 10만원 (1,000%) 달성 특화 모드로 진입합니다!")
+        extreme_strategy = ExtremeGrowthStrategy(broker, universe, config)
+        extreme_strategy.run()
+        return # 해당 모드는 자체 무한 루프를 가지므로 메인 함수 종료
+        
     strategies = {
         "Breakout": VolatilityBreakout(broker, universe),
         "MeanReversion": MeanReversion(broker, universe),
