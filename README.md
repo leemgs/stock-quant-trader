@@ -1,4 +1,4 @@
-# Stock Quant Trader (Korea Investment KIS API 🚀)
+# KIS-based Stock Quant Trader (Korea Investment KIS API 🚀)
 
 > **한국투자증권 KIS API 기반 크로스플랫폼(Ubuntu/Windows/macOS) 자동매매 프레임워크**
 >
