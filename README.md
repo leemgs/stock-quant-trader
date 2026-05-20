@@ -138,11 +138,22 @@ auth:
 ```
 
 ### 5단계: 프로그램 실행
+
+#### 옵션 A: 일반 실행 (Python)
 1. 아래 명령어로 프로그램을 실행합니다.
 ```bash
 python3 main.py
 ```
 2. 시스템 로그와 텔레그램 알림을 통해 작동 상태를 확인합니다.
+
+#### 옵션 B: Docker Compose를 이용한 백그라운드 자동 실행 (권장)
+Docker가 설치된 환경이라면 복잡한 의존성 설치 없이 아래 명령어 한 줄로 매매 봇과 실시간 대시보드를 동시에 백그라운드에서 가동할 수 있습니다.
+```bash
+docker-compose up -d
+```
+- 매매 봇 로그 실시간 확인: `docker-compose logs -f bot`
+- 대시보드 접속: 브라우저에서 `http://localhost:8501`
+- 시스템 전체 안전 종료: `docker-compose down`
 
 ---
 

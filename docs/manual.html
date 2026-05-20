@@ -54,12 +54,23 @@
 
                 <section id="running">
                     <h2>2. 프로그램 가동 프로세스</h2>
+                    <p>시스템을 실행하는 두 가지 방법이 있습니다.</p>
+                    
+                    <h3 style="margin-top: 1rem; font-size: 1.2rem;">[방법 1] 일반 Python 실행</h3>
                     <ol>
                         <li><strong>API 상태 점검</strong>: KIS API 연결 상태를 먼저 확인하세요.</li>
                         <li><strong>main.py 실행</strong>: <code>python main.py</code>를 실행합니다.</li>
-                        <li><strong>토큰 발급 확인</strong>: 터미널 로그를 통해 Access Token이 정상적으로 발급되었는지 확인하세요.</li>
                         <li><strong>텔레그램 확인</strong>: "자동매매가 시작되었습니다" 메시지가 오면 정상입니다.</li>
                     </ol>
+                    
+                    <h3 style="margin-top: 1.5rem; font-size: 1.2rem; color: var(--primary-color);">[방법 2] Docker Compose 백그라운드 실행 (권장)</h3>
+                    <p>Docker 환경에서는 아래 명령어 한 줄로 매매 봇과 실시간 대시보드가 동시에 가동됩니다.</p>
+                    <div class="code-box"><code>docker-compose up -d</code></div>
+                    <ul style="margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>봇 실시간 로그 확인</strong>: <code>docker-compose logs -f bot</code></li>
+                        <li><strong>대시보드 접속</strong>: 웹 브라우저에서 <code>http://localhost:8501</code> 접속</li>
+                        <li><strong>시스템 안전 종료</strong>: <code>docker-compose down</code></li>
+                    </ul>
                 </section>
 
                 <section id="dashboard">

@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: quant_bot
+    command: python main.py
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Seoul
+
+  dashboard:
+    build: .
+    container_name: quant_dashboard
+    command: streamlit run src/monitor/dashboard.py
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    restart: unless-stopped
+    environment:
+      - TZ=Asia/Seoul
