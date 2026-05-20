@@ -1,9 +1,14 @@
+import sys
+import os
 import streamlit as st
 import pandas as pd
 import sqlite3
 import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
+
+# sys.path 설정: src 폴더를 포함하여 analytics 등을 임포트 가능하도록 함
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 # 페이지 설정
 st.set_page_config(page_title="Antigravity Quant Dashboard", layout="wide")

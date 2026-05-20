@@ -163,7 +163,7 @@ python3 main.py
 
 ### 3) 모니터링 방법
 - **텔레그램**: 매수/매도 발생 시 스마트폰으로 즉시 알림이 전송됩니다.
-- **웹 대시보드**: `streamlit run monitor/dashboard.py`를 실행하여 실시간 수익률 곡선을 확인하세요.
+- **웹 대시보드**: `streamlit run src/monitor/dashboard.py`를 실행하여 실시간 수익률 곡선을 확인하세요.
 - **로그 파일**: `logs/trading.log`에서 시스템의 모든 동작 상세 내역을 확인할 수 있습니다.
 
 ### 4) 실전 투자 전환 시 주의사항
@@ -177,7 +177,7 @@ python3 main.py
 ### 6단계: 실시간 모니터링 대시보드 실행
 매매 현황을 웹 브라우저에서 시각적으로 확인하려면 새 터미널을 열고 아래 명령어를 입력하세요.
 ```bash
-streamlit run monitor/dashboard.py
+streamlit run src/monitor/dashboard.py
 ```
 *실행 후 브라우저에서 `localhost:8501` 주소로 접속하면 대시보드가 나타납니다.*
 

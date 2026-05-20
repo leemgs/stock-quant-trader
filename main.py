@@ -1,9 +1,13 @@
 import sys
+import os
 import time
 from datetime import datetime
 import pandas as pd
 import yaml
 import logging
+
+# src 디렉토리를 path에 추가하여 모듈 임포트 지원
+sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
 from broker.kis_api import KISBroker
 from core.ensemble_engine import EnsembleEngine
